@@ -130,7 +130,6 @@ openAcbtn.addEventListener("click", function (e) {
   if (userLN.value != "" && userFN != "") {
     window.location.href = "./bankistWepApp.html";
     userFN.value = userLN.value = userEmail.value = userPass.value = userConfirmPass.value = ""
-  } else {
-    alert("fails");
-  }
+  } 
 });
+

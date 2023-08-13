@@ -1,11 +1,19 @@
 {
   "name": "bankistwebsite",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bankify is a marketing website for bankist web App, where users can able to see the features of opening a bank account and can able to open an account instantly.",
   "scripts": {
-    "start": "parcel bankifySite.html",
-    "build" : "parcel build bankifySite.html --dist-dir ./dist"
+    "start": "parcel index.html",
+    "build": "parcel build ./*.html --dist-dir ./dist"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijayk66/project_bankify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vijayk66/project_bankify/issues"
+  },
+  "homepage": "https://github.com/vijayk66/project_bankify#readme"
 }
