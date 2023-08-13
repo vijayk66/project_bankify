@@ -14,8 +14,6 @@
   --menu-btn-padding: 1.2rem 2rem;
   --header-padding: 2rem;
 
-  --content-gap:1vh;
-  --tab-link-gap:6vh;
 
   /* general */
   --section-p: 2vw;
@@ -32,6 +30,8 @@
   --feature-content-gap: 3vh;
   --feature-content-fir-p: 1.8vw;
   --feature-content-sec-p: 1.5vw;
+  --content-gap:1vh;
+  --tab-link-gap:6vh;
 
   /* Testimonials */
   --testimonial-h-fs: 1.2vw;
@@ -98,6 +98,8 @@ html {
   border-radius: 3rem;
   color: #fff;
   font-weight: 500;
+  cursor: pointer;
+
 }
 .open-btn:hover {
   opacity: 0.9;
@@ -122,16 +124,16 @@ html {
 
 @keyframes after {
   0% {
-    height: 2vw;
-    width: 2vw;
+    height: 1.5vw;
+    width: 1vw;
   }
   50% {
-    height: 3vw;
-    width: 2.5vw;
-  }
-  100% {
     height: 2vw;
     width: 2vw;
+  }
+  100% {
+    height: 1.5vw;
+    width: 1vw;
   }
 }
 
@@ -298,7 +300,7 @@ html {
 }
 
 .features img {
-  height: 22vw;
+  width: 30vw;
   border-radius: 5px;
 }
 
@@ -570,6 +572,7 @@ html {
 }
 
 .open-account p {
+  max-width: 65%;
   text-align: center;
   font-size: 2.5vw;
   font-weight: 600;
@@ -644,6 +647,16 @@ input[type="submit"] {
   width: 1px;
 }
 
+
+.author-information {
+  background-color: #3b3a3a;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8vw;
+  padding: 1rem;
+}
+
+
 /* Modal Section */
 .modal {
   position: fixed;
@@ -671,7 +684,7 @@ input[type="submit"] {
 }
 
 .modal-header {
-  font-size: 3.25rem;
+  font-size: 2vw;
   margin-bottom: 4.5rem;
   line-height: 1.5;
 }
@@ -685,7 +698,6 @@ input[type="submit"] {
 }
 
 .modal-form {
-  margin: 0 3rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
@@ -693,17 +705,20 @@ input[type="submit"] {
 }
 
 .modal-form label {
-  font-size: 1.7rem;
+  font-size: 1.1vw;
   font-weight: 500;
 }
 
 .modal-form input {
-  font-size: 1.7rem;
+  font-size: 1.1vw;
   padding: 1rem 1.5rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
 }
-
+.modal-form input:focus {
+  outline:none;
+  box-shadow: 0 0 1px 3px var(--primary-brand-color);
+}
 .modal-form button {
   grid-column: 1 / span 2;
   justify-self: center;
@@ -945,6 +960,8 @@ input[type="submit"] {
 
   }
 }
+
+
 
 @media screen and (max-width: 491px) {
   :root {

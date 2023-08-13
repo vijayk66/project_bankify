@@ -17,8 +17,16 @@ const tabs = document.querySelectorAll(".tab");
 const tabContents = document.querySelectorAll(".content");
 const tabsContainer = document.querySelector(".opt-content-heading");
 
+const testimonials = document.querySelectorAll(".testimonial");
 
-const testimonials = document.querySelectorAll(".testimonial")
+const userFN = document.querySelector(".user-fn");
+const userLN = document.querySelector(".user-ln");
+const userEmail = document.querySelector(".user-email");
+const userPass = document.querySelector(".user-password");
+const userConfirmPass = document.querySelector(".user-confirm-password");
+
+// Modal
+const openAcbtn = document.querySelector(".openAC");
 
 // opening modal
 function toogleModal(e) {
@@ -74,10 +82,10 @@ function loadImg(entries) {
 
   if (!entry.isIntersecting) {
     navigationContainer.style.position = "sticky";
-    navigationContainer.style.boxShadow="0 0 2px 5px rgb(227, 226, 226)"
+    navigationContainer.style.boxShadow = "0 0 2px 5px rgb(227, 226, 226)";
   } else {
     navigationContainer.style.position = "relative";
-    navigationContainer.style.boxShadow="0 0 5px 5px rgb(227, 226, 226)"
+    navigationContainer.style.boxShadow = "0 0 5px 5px rgb(227, 226, 226)";
   }
   lazyImg.forEach((img) => {
     const imgName = img.dataset.name;
@@ -99,20 +107,30 @@ tabsContainer.addEventListener("click", function (e) {
     const tabId = e.target.dataset.id;
     tabs.forEach((tab) => tab.classList.remove("active-tab"));
     e.target.classList.add("active-tab");
-    tabContents.forEach(content => {
-      content.style.display="none";
-      document.querySelector(`.content-${tabId}`).style.display="block"
-    })
-
+    tabContents.forEach((content) => {
+      content.style.display = "none";
+      document.querySelector(`.content-${tabId}`).style.display = "block";
+    });
   }
 });
 
 // testimonials
-testimonials.forEach(test => {
-  test.addEventListener("mouseover", function(){
-    this.style.transform = "scale(1.05)"
-  })
-  test.addEventListener("mouseout", function(){
-    this.style.transform = "scale(1)"
-  })
-})
+testimonials.forEach((test) => {
+  test.addEventListener("mouseover", function () {
+    this.style.transform = "scale(1.05)";
+  });
+  test.addEventListener("mouseout", function () {
+    this.style.transform = "scale(1)";
+  });
+});
+
+// Open Account Modal
+openAcbtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (userLN.value != "" && userFN != "") {
+    window.location.href = "./bankistWepApp.html";
+    userFN.value = userLN.value = userEmail.value = userPass.value = userConfirmPass.value = ""
+  } else {
+    alert("fails");
+  }
+});

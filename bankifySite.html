@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bankify | The Bank You Need</title>
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./src/style.css" />
-    <script src="./src/script.js" defer></script>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/css/Bankify.css" />
+    <script src="./src/js/bankify.js" defer></script>
   </head>
 
   <body>
@@ -263,6 +263,10 @@
           <input type="submit" />
         </form>
       </div>
+      <p class="author-information">
+        &copy; The entire website idea was from Udemy JavaScript course author Jonas Schmedtmann just
+        changed the entire layout and implemented some new features
+      </p>
     </div>
 
     <!-- Modal window -->
@@ -274,12 +278,21 @@
       </h2>
       <form class="modal-form">
         <label>First Name</label>
-        <input type="text" />
+        <input class="user-fn" type="text" />
+
         <label>Last Name</label>
-        <input type="text" />
+        <input class="user-ln" type="text" />
+        
         <label>Email Address</label>
-        <input type="email" />
-        <button>Next step &rarr;</button>
+        <input class="user-email" type="email" />
+        
+        <label>Enter-Password</label>
+        <input class="user-password" type="password" />
+        
+        <label>Confirm-Password</label>
+        <input class="user-confirm-password" type="password" />
+
+        <button class="openAC">Open Instant A/C</button>
       </form>
     </div>
     <div class="overlay hidden"></div>
