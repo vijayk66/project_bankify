@@ -127,9 +127,43 @@ testimonials.forEach((test) => {
 // Open Account Modal
 openAcbtn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (userLN.value != "" && userFN != "") {
-    window.location.href = "./bankistWepApp.html";
-    userFN.value = userLN.value = userEmail.value = userPass.value = userConfirmPass.value = ""
-  } 
-});
 
+  const isEmpty =
+    userLN.value != "" &&
+    userFN.value != "" &&
+    userEmail.value != "" &&
+    userPass.value != "" &&
+    userConfirmPass.value != ""
+      ? true
+      : false;
+
+  function validateEmail(email) {
+    var re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function resetFileds() {
+    userFN.value =
+      userLN.value =
+      userEmail.value =
+      userPass.value =
+      userConfirmPass.value =
+        "";
+  }
+
+  if (isEmpty) {
+    if (validateEmail(userEmail.value)) {
+      if (userPass.value === userConfirmPass.value) {
+        window.location.href = "./bankistWepApp.html";
+        resetFileds();
+      } else {
+        alert("password not matching");
+      }
+    } else {
+      alert("Email is wrong");
+    }
+  } else {
+    alert("filed should not be empty");
+  }
+});
