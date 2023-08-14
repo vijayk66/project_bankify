@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bankify is a marketing website for bankist web App, where users can able to see the features of opening a bank account and can able to open an account instantly.",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel bankify.html",
     "build": "parcel build ./*.html --dist-dir ./dist"
   },
   "author": "",
