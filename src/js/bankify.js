@@ -5,7 +5,7 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn-close-modal");
 const btnsOpenModal = document.querySelectorAll(".open-btn");
 
-const navigationContainer = document.querySelector(".header");
+// const navigationContainer = document.querySelector(".header");
 const heroContainer = document.querySelector(".hero-container");
 const menu = document.querySelector(".menu");
 const navLinks = document.querySelectorAll(".nav-link");
